@@ -36,19 +36,25 @@ export class ExtendedClient extends Client {
         // Commands
         const slashCommands: ApplicationCommandDataResolvable[] = [];
         const commandFiles = await globPromise(`${__dirname}/../commands/**/*{.ts,.js}`);
-        console.log({ commandFiles });
         commandFiles.map(async (filePath) => {
             const command: CommandType = await this.importFile(filePath);
             if (!command.name) return;
+            console.log(command);
 
             this.commands.set(command.name, command);
             slashCommands.push(command);
+        });
+
+        this.on('ready', () => {
+            this.registerCommands({ commands: slashCommands, guildId: process.env.guildId });
         });
 
         // Events
         const eventFiles = await globPromise(`${__dirname}/../events/*{.ts,.js}`);
         eventFiles.map(async (filePath) => {
             const event = await this.importFile(filePath);
+            console.log(event);
+
             this.on(event.name, event.run);
         });
     }
