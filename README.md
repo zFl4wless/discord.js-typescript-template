@@ -16,7 +16,7 @@ A discord.js bot template using TypeScript.
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENCE](LICENCE) file for details.
 
 ## 🐞 Bugs Found?
 
