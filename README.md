@@ -14,6 +14,10 @@ A discord.js bot template using TypeScript.
     - `npm run build` - Compiles the code
     - `npm run watch` - Recompiles the code on file changes
 
+## 📖 Credits
+
+This project was inspired by [reconlx](https://github.com/reconlx) and is based on his [djs-typescript-handler](https://github.com/reconlx/djs-typescript-handler) repository.
+
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENCE](LICENCE) file for details.
